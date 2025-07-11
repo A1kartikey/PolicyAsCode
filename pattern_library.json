@@ -1,0 +1,39 @@
+[
+  {
+    "id": "hardcoded-secret",
+    "name": "Hardcoded Secret",
+    "regex": "(?i)(password|api_key)[\\s:=]+[\"']\\w{6,}[\"']",
+    "description": "Avoid hardcoded secrets",
+    "severity": "HIGH"
+  },
+  {
+    "id": "print-debug",
+    "name": "Print Statement",
+    "regex": "print\\(",
+    "description": "Avoid print statements in production",
+    "severity": "LOW"
+  },
+
+  {
+  "id": "weak-encryption-md5",
+  "name": "Weak Encryption - MD5",
+  "description": "MD5 is considered insecure. Use SHA-256 or better.",
+  "severity": "CRITICAL",
+  "regex": "(?i)hashlib\\.md5\\s*\\("
+},
+{
+  "id": "weak-encryption-sha1",
+  "name": "Weak Encryption - SHA1",
+  "description": "SHA1 is deprecated. Use SHA-256 or stronger.",
+  "severity": "HIGH",
+  "regex": "(?i)hashlib\\.sha1\\s*\\("
+},
+{
+  "id": "strong-encryption-aes",
+  "name": "Strong Encryption - AES",
+  "description": "AES encryption usage detected.",
+  "severity": "INFO",
+  "regex": "(?i)(from\\s+Crypto|cryptography\\.fernet|AES\\.new\\()"
+}
+
+]
