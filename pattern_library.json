@@ -34,6 +34,48 @@
   "description": "AES encryption usage detected.",
   "severity": "INFO",
   "regex": "(?i)(from\\s+Crypto|cryptography\\.fernet|AES\\.new\\()"
+},
+{
+  "id": "gdpr-personal-data-email",
+  "name": "GDPR Personal Data - Email",
+  "regex": "\"email\":\\s*\"[^\"]*\"",
+  "description": "Storing email addresses may require GDPR compliance.",
+  "severity": "HIGH"
+},
+{
+  "id": "gdpr-personal-data-name",
+  "name": "GDPR Personal Data - Name",
+  "regex": "\"name\":\\s*\"[^\"]*\"",
+  "description": "Storing names may require GDPR compliance.",
+  "severity": "HIGH"
+},
+{
+  "id": "gdpr-ip-tracking",
+  "name": "GDPR IP Tracking",
+  "regex": "\"ip\":\\s*\"\\d{1,3}(\\.\\d{1,3}){3}\"",
+  "description": "IP address tracking may require user consent.",
+  "severity": "MEDIUM"
+},
+{
+  "id": "gdpr-consent-required",
+  "name": "GDPR Consent Required",
+  "regex": "\"consent\":\\s*\"yes\"",
+  "description": "Consent should be obtained under GDPR.",
+  "severity": "MEDIUM"
+},
+{
+  "id": "gdpr-data-retention",
+  "name": "GDPR Data Retention",
+  "regex": "\"data_retention\":\\s*\"\\d+[dmy]\"",
+  "description": "Check GDPR-compliant data retention.",
+  "severity": "LOW"
+},
+{
+  "id": "gdpr-plaintext-sensitive",
+  "name": "Sensitive Data in Plaintext - SSN",
+  "regex": "\"ssn\":\\s*\"[^\"]*\"",
+  "description": "SSN should be encrypted.",
+  "severity": "CRITICAL"
 }
 
 ]
