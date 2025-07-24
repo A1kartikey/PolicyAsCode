@@ -76,6 +76,20 @@
   "regex": "\"ssn\":\\s*\"[^\"]*\"",
   "description": "SSN should be encrypted.",
   "severity": "CRITICAL"
+},
+{
+  "id": "singleton-pattern",
+  "name": "Singleton Pattern",
+  "regex": "def __new__\\(cls\\):\\s*\\n.*cls\\._instance\\s*=\\s*super\\(\\)\\.\\__new__\\(cls\\)",
+  "description": "Possible Singleton pattern using __new__ override and class instance.",
+  "severity": "INFO"
+},
+{
+  "id": "factory-pattern",
+  "name": "Factory Method Pattern",
+  "regex": "def (create|get)_\\w+\\(.*\\):\\s*\\n(.*\\n)*?\\s*return \\w+\\(\\)",
+  "description": "Detects factory method pattern by looking for object-creation methods with conditional returns.",
+  "severity": "INFO"
 }
 
 ]
